@@ -77,7 +77,6 @@ public class DogGeneratorFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DogGeneratorViewModel.class);
-        // TODO: Use the ViewModel
         dogImageView = view.findViewById(R.id.new_dog_imv);
         generateBtn = view.findViewById(R.id.generate_new_dogs_btn);
         generateBtn.setOnClickListener(new View.OnClickListener() {
