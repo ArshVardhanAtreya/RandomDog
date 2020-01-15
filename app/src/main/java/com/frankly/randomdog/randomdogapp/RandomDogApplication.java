@@ -6,6 +6,10 @@ import android.content.Context;
 import com.frankly.randomdog.bitmaputil.BitmapCache;
 import com.frankly.randomdog.sharedpreferences.SharedPref;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 
 public class RandomDogApplication extends Application {
     static BitmapCache  cache = null;

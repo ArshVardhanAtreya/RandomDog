@@ -3,6 +3,10 @@ package com.frankly.randomdog.ui.doggenerator;
 import androidx.databinding.ObservableField;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 public class DogGeneratorViewModel extends ViewModel {
 
     private ObservableField<String> imageURL = new ObservableField<>();

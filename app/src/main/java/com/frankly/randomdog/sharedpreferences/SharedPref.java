@@ -14,6 +14,12 @@ import java.util.ArrayList;
 
 import static android.content.Context.MODE_PRIVATE;
 
+
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
+
 public class SharedPref {
 
     private Context context;

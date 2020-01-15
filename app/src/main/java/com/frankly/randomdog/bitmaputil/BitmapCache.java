@@ -13,6 +13,11 @@ import com.bumptech.glide.request.transition.Transition;
 import com.frankly.randomdog.R;
 import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
+
 public class BitmapCache extends LruCache<String, Bitmap> {
     public BitmapCache(int maximumSize) {
         super(maximumSize);

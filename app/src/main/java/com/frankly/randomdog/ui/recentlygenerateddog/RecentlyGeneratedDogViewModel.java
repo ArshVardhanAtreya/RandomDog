@@ -6,6 +6,10 @@ import com.frankly.randomdog.model.DogModel;
 
 import java.util.ArrayList;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 public class RecentlyGeneratedDogViewModel extends ViewModel {
 
     private ArrayList<DogModel> dogsList;

@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 import com.frankly.randomdog.ui.doggenerator.DogGeneratorFragment;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 public class DogGeneratorActivity extends AppCompatActivity {
 
     @Override

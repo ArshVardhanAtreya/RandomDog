@@ -34,6 +34,10 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 public class DogGeneratorFragment extends Fragment {
 
     private ImageView dogImageView;

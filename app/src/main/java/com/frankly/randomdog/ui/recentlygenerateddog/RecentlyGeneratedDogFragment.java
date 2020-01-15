@@ -20,6 +20,10 @@ import com.frankly.randomdog.R;
 import com.frankly.randomdog.bitmaputil.BitmapCache;
 import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
 public class RecentlyGeneratedDogFragment extends Fragment {
 
     private RecentlyGeneratedDogViewModel mViewModel;

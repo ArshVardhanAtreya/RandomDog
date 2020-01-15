@@ -1,5 +1,10 @@
 package com.frankly.randomdog.model;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
+
 public class DogModel {
 
     private String imageURL;

@@ -1,5 +1,10 @@
 package com.frankly.randomdog.networkresponse;
 
+/**
+ * @author: ArshVardhanAtreya <arshvardhan@yahoo.co.in>
+ */
+
+
 public class GenerateDogResponse {
 
     private String message;
