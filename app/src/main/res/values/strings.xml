@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RandomDog</string>
+    <string name="random_dog_generator">Random Dog Generator!</string>
+    <string name="generate_dogs">Generate Dogs!</string>
+    <string name="my_recently_generated_dogs">My Recently Generated Dogs!</string>
+    <string name="pref_name">Random_Dog_Preferences</string>
+    <string name="dogs_list">dogs list</string>
+    <string name="generate">Generate!</string>
+    <string name="clear_dogs">Clear Dogs!</string>
+    <string name="success">success</string>
+</resources>
