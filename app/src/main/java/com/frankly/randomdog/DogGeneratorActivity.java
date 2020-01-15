@@ -1,10 +1,9 @@
 package com.frankly.randomdog;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 import com.frankly.randomdog.ui.doggenerator.DogGeneratorFragment;

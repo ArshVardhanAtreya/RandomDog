@@ -1,17 +1,6 @@
 package com.frankly.randomdog.ui.doggenerator;
 
-import androidx.databinding.BindingAdapter;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ObservableField;
-import androidx.lifecycle.ViewModelProviders;
-
-import android.content.res.Configuration;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableField;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -50,11 +47,21 @@ public class DogGeneratorFragment extends Fragment {
         return new DogGeneratorFragment();
     }
 
+    @BindingAdapter("bind:dogImage")
+    public static void loadImage(ImageView iv, String url) {
+        if (url != null && iv != null) {
+            BitmapCache cache = RandomDogApplication.getCache();
+            String key = url.substring(url.lastIndexOf("/") + 1);
+            cache.setBitmapOrDownload(key, url, iv);
+        }
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        fragmentBinding =  DataBindingUtil.
+        fragmentBinding = DataBindingUtil.
                 inflate(inflater, R.layout.dog_generator_fragment, container, false);
         view = fragmentBinding.getRoot();
         fragmentBinding.setViewModel(mViewModel);
@@ -67,7 +74,7 @@ public class DogGeneratorFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(DogGeneratorViewModel.class);
         // TODO: Use the ViewModel
-        dogImageView =  view.findViewById(R.id.new_dog_imv);
+        dogImageView = view.findViewById(R.id.new_dog_imv);
         generateBtn = view.findViewById(R.id.generate_new_dogs_btn);
         generateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,8 +107,8 @@ public class DogGeneratorFragment extends Fragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if(BuildConfig.DEBUG)
-                            Log.d("API_RESPONSE",response + "");
+                        if (BuildConfig.DEBUG)
+                            Log.d("API_RESPONSE", response + "");
                         // Parsing the received string to get imageURL
                         Gson gson = new Gson();
                         GenerateDogResponse data = gson.fromJson(response, GenerateDogResponse.class);
@@ -131,26 +138,15 @@ public class DogGeneratorFragment extends Fragment {
         queue.add(stringRequest);
     }
 
-
     private ArrayList<DogModel> getDogList() {
         ArrayList<DogModel> dogList;
-        dogList = RandomDogApplication.getPref().loadDogsListData();
+        dogList = RandomDogApplication.getPref().loadDogsData();
         return dogList != null && dogList.size() > 0 ? dogList : new ArrayList<DogModel>();
     }
 
     private void updateDogList() {
         if (!dogArrayList.isEmpty())
-            RandomDogApplication.getPref().saveDogsListData(dogArrayList);
-    }
-
-    @BindingAdapter("bind:dogImage")
-    public static void loadImage(ImageView iv, String url) {
-        if (url != null && iv != null) {
-            BitmapCache cache = RandomDogApplication.getCache();
-            String key = url.substring(url.lastIndexOf("/")+1);
-            cache.setBitmapOrDownload(key, url, iv);
-        }
-
+            RandomDogApplication.getPref().saveDogsData(dogArrayList);
     }
 
 }

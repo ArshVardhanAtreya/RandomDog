@@ -16,13 +16,13 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SharedPref {
 
-    private static Context context;
+    private Context context;
 
     public SharedPref(Context context) {
         this.context = context;
     }
 
-    public void saveDogsListData(ArrayList<DogModel> list) {
+    public void saveDogsData(ArrayList<DogModel> list) {
         SharedPreferences sharedPreferences = context.
                 getSharedPreferences(RandomDogApplication.getContext().
                         getString(R.string.pref_name), MODE_PRIVATE);
@@ -36,14 +36,15 @@ public class SharedPref {
         editor.apply();
     }
 
-    public ArrayList<DogModel> loadDogsListData() {
+    public ArrayList<DogModel> loadDogsData() {
         SharedPreferences sharedPreferences = context.
                 getSharedPreferences(RandomDogApplication.getContext().
                         getString(R.string.pref_name), MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPreferences.getString(RandomDogApplication.getContext()
                 .getString(R.string.dogs_list), null);
-        Type type = new TypeToken<ArrayList<DogModel>>() {}.getType();
+        Type type = new TypeToken<ArrayList<DogModel>>() {
+        }.getType();
         return gson.fromJson(json, type);
     }
 

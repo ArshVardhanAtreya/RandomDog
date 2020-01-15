@@ -1,6 +1,5 @@
 package com.frankly.randomdog.bitmaputil;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 
@@ -15,56 +14,61 @@ import com.frankly.randomdog.R;
 import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 
 public class BitmapCache extends LruCache<String, Bitmap> {
-    public BitmapCache(int maxSize) {
-        super(maxSize);
+    public BitmapCache(int maximumSize) {
+        super(maximumSize);
     }
 
     public static int getCacheSize() {
-        int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        return maxMemory / 8;
+        int maximumMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+        return maximumMemory / 8;
     }
 
     @Override
-    protected int sizeOf( String key, Bitmap value ) {
-        return value.getByteCount()/1024;
+    protected int sizeOf(String key, Bitmap bitmap) {
+        return bitmap.getByteCount() / 1024;
     }
 
     public Bitmap getBitmap(String key) {
         return this.get(key);
     }
 
-    public void setBitmapOrDownload(final String key, String url, final ImageView iv) {
+    public void setBitmapOrDownload(final String key, String imageUrl, final ImageView imageView) {
+
+        final RequestOptions options = new RequestOptions();
+        options.placeholder(R.drawable.ic_launcher_background);
+        options.override(200, 200);
+        options.centerCrop();
+
         if (hasBitmap(key)) {
-            iv.setImageBitmap(getBitmap(key));
+            Glide.with(RandomDogApplication.getContext()).asBitmap()
+                    .load(getBitmap(key))
+                    .apply(options)
+                    .into(imageView);
         } else {
-            RequestOptions glideOptions = new RequestOptions();
-            glideOptions.placeholder(R.drawable.ic_launcher_background);
-            glideOptions.override(200, 200);
-            glideOptions.centerCrop();
-            BaseTarget bs = new BaseTarget<Bitmap>(){
+
+            BaseTarget bs = new BaseTarget<Bitmap>() {
                 @Override
                 public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                     put(key, resource);
-                    iv.setImageBitmap(resource);
+                    Glide.with(RandomDogApplication.getContext()).asBitmap()
+                            .load(getBitmap(key))
+                            .apply(options)
+                            .into(imageView);
                 }
 
                 @Override
-                public void removeCallback(SizeReadyCallback cb) {}
+                public void removeCallback(SizeReadyCallback cb) {
+                }
 
                 @Override
-                public void getSize(SizeReadyCallback cb) {}
+                public void getSize(SizeReadyCallback cb) {
+                }
             };
 
             Glide.with(RandomDogApplication.getContext()).asBitmap()
-                    .load(url)
-                    .apply(glideOptions)
+                    .load(imageUrl)
+                    .apply(options)
                     .into(bs);
-        }
-    }
-
-    public void setBitmap(String key, Bitmap bitmap) {
-        if (!hasBitmap(key)) {
-            this.put(key, bitmap);
         }
     }
 

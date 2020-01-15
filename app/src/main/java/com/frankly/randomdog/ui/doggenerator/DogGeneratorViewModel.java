@@ -4,11 +4,11 @@ import androidx.databinding.ObservableField;
 import androidx.lifecycle.ViewModel;
 
 public class DogGeneratorViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
 
-    public DogGeneratorViewModel() {}
+    private ObservableField<String> imageURL = new ObservableField<>();
 
-    public ObservableField<String> imageURL = new ObservableField<>();
+    public DogGeneratorViewModel() {
+    }
 
     public ObservableField<String> getImageURL() {
         return imageURL;

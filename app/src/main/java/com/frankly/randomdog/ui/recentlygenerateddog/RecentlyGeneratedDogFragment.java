@@ -1,13 +1,6 @@
 package com.frankly.randomdog.ui.recentlygenerateddog;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -25,7 +23,7 @@ import com.frankly.randomdog.randomdogapp.RandomDogApplication;
 public class RecentlyGeneratedDogFragment extends Fragment {
 
     private RecentlyGeneratedDogViewModel mViewModel;
-    private LinearLayout rootLayout;
+    private LinearLayout linearLayout;
     private Button deleteBtn;
     private View view;
 
@@ -46,20 +44,19 @@ public class RecentlyGeneratedDogFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(RecentlyGeneratedDogViewModel.class);
-        // TODO: Use the ViewModel
-        mViewModel.setDogsList(RandomDogApplication.getPref().loadDogsListData());
+        mViewModel.setDogsList(RandomDogApplication.getPref().loadDogsData());
         setUIRef();
         bindHZSVData();
     }
 
     private void setUIRef() {
-        rootLayout = view.findViewById(R.id.layout_root);
+        linearLayout = view.findViewById(R.id.layout_root);
         deleteBtn = view.findViewById(R.id.delete_btn);
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mViewModel  = null;
-                RandomDogApplication.getPref().saveDogsListData(null);
+                mViewModel = null;
+                RandomDogApplication.getPref().saveDogsData(null);
                 bindHZSVData();
             }
         });
@@ -85,11 +82,11 @@ public class RecentlyGeneratedDogFragment extends Fragment {
                 loadImage(mViewModel.getDogsList().get(i).getKey(), mViewModel.getDogsList().get(i).getImageURL(), imageView);
 
                 itemLayout.addView(imageView);
-                rootLayout.addView(itemLayout);
+                linearLayout.addView(itemLayout);
 
             }
         } else {
-            rootLayout.removeAllViews();
+            linearLayout.removeAllViews();
         }
     }
 
