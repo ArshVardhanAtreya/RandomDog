@@ -1,7 +1,7 @@
-package com.frankly.randomdog.ui.recentlygenerateddog.viewmodel
+package com.randomdog.ui.recentlygenerateddog.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.frankly.randomdog.model.DogModel
+import com.randomdog.model.DogModel
 import java.util.*
 
 /**

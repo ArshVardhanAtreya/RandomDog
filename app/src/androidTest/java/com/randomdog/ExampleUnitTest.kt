@@ -1,4 +1,4 @@
-package com.frankly.randomdog
+package com.randomdog
 
 import org.junit.Assert
 import org.junit.Test

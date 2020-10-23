@@ -1,11 +1,11 @@
-package com.frankly.randomdog.sharedpreferences
+package com.randomdog.sharedpreferences
 
 import android.content.Context
-import com.frankly.randomdog.R
-import com.frankly.randomdog.model.DogModel
-import com.frankly.randomdog.randomdogapp.RandomDogApplication
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.randomdog.R
+import com.randomdog.model.DogModel
+import com.randomdog.randomdogapp.RandomDogApplication
 import java.util.*
 
 /**

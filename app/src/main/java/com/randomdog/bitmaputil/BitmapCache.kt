@@ -1,4 +1,4 @@
-package com.frankly.randomdog.bitmaputil
+package com.randomdog.bitmaputil
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -9,8 +9,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.BaseTarget
 import com.bumptech.glide.request.target.SizeReadyCallback
 import com.bumptech.glide.request.transition.Transition
-import com.frankly.randomdog.R
-import com.frankly.randomdog.randomdogapp.RandomDogApplication
+import com.randomdog.R
+import com.randomdog.randomdogapp.RandomDogApplication
 
 /**
  * @author: ArshVardhanAtreya <arshvardhan></arshvardhan>@yahoo.co.in>

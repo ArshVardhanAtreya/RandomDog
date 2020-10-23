@@ -1,4 +1,4 @@
-package com.frankly.randomdog.ui.recentlygenerateddog.view
+package com.randomdog.ui.recentlygenerateddog.view
 
 import android.os.Bundle
 import android.view.Gravity
@@ -12,10 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.frankly.randomdog.R
-import com.frankly.randomdog.bitmaputil.BitmapCache
-import com.frankly.randomdog.randomdogapp.RandomDogApplication
-import com.frankly.randomdog.ui.recentlygenerateddog.viewmodel.RecentlyGeneratedDogViewModel
+import com.randomdog.R
+import com.randomdog.bitmaputil.BitmapCache
+import com.randomdog.randomdogapp.RandomDogApplication
+import com.randomdog.ui.recentlygenerateddog.viewmodel.RecentlyGeneratedDogViewModel
 
 /**
  * @author: ArshVardhanAtreya <arshvardhan></arshvardhan>@yahoo.co.in>

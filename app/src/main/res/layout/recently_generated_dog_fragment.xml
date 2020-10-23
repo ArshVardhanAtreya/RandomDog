@@ -5,7 +5,7 @@
     android:id="@+id/recentlygenerateddog"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.recentlygenerateddog.view.RecentlyGeneratedDogFragment">
+    tools:context="com.randomdog.ui.recentlygenerateddog.view.RecentlyGeneratedDogFragment">
 
     <HorizontalScrollView
         android:layout_width="match_parent"

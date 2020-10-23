@@ -1,4 +1,4 @@
-package com.frankly.randomdog.ui.doggenerator.viewmodel
+package com.randomdog.ui.doggenerator.viewmodel
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel

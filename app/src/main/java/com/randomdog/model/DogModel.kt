@@ -1,4 +1,4 @@
-package com.frankly.randomdog.model
+package com.randomdog.model
 
 
 /**

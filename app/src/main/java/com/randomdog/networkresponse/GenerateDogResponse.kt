@@ -1,4 +1,4 @@
-package com.frankly.randomdog.networkresponse
+package com.randomdog.networkresponse
 
 /**
  * @author: ArshVardhanAtreya <arshvardhan></arshvardhan>@yahoo.co.in>

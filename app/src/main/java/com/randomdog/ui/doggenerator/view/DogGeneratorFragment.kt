@@ -1,4 +1,4 @@
-package com.frankly.randomdog.ui.doggenerator.view
+package com.randomdog.ui.doggenerator.view
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -17,15 +17,15 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.frankly.randomdog.BuildConfig
-import com.frankly.randomdog.R
-import com.frankly.randomdog.bitmaputil.BitmapCache
-import com.frankly.randomdog.databinding.DogGeneratorFragmentBinding
-import com.frankly.randomdog.model.DogModel
-import com.frankly.randomdog.networkresponse.GenerateDogResponse
-import com.frankly.randomdog.randomdogapp.RandomDogApplication
-import com.frankly.randomdog.ui.doggenerator.viewmodel.DogGeneratorViewModel
 import com.google.gson.Gson
+import com.randomdog.BuildConfig
+import com.randomdog.R
+import com.randomdog.bitmaputil.BitmapCache
+import com.randomdog.databinding.DogGeneratorFragmentBinding
+import com.randomdog.model.DogModel
+import com.randomdog.networkresponse.GenerateDogResponse
+import com.randomdog.randomdogapp.RandomDogApplication
+import com.randomdog.ui.doggenerator.viewmodel.DogGeneratorViewModel
 import java.util.*
 
 /**

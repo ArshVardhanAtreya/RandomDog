@@ -1,11 +1,11 @@
-package com.frankly.randomdog
+package com.randomdog
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.frankly.randomdog.ui.doggenerator.view.DogGeneratorActivity
-import com.frankly.randomdog.ui.recentlygenerateddog.view.RecentlyGeneratedDogActivity
+import com.randomdog.ui.doggenerator.view.DogGeneratorActivity
+import com.randomdog.ui.recentlygenerateddog.view.RecentlyGeneratedDogActivity
 
 /**
  * @author: ArshVardhanAtreya <arshvardhan></arshvardhan>@yahoo.co.in>

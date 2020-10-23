@@ -1,9 +1,9 @@
-package com.frankly.randomdog.randomdogapp
+package com.randomdog.randomdogapp
 
 import android.app.Application
 import android.content.Context
-import com.frankly.randomdog.bitmaputil.BitmapCache
-import com.frankly.randomdog.sharedpreferences.SharedPref
+import com.randomdog.bitmaputil.BitmapCache
+import com.randomdog.sharedpreferences.SharedPref
 
 /**
  * @author: ArshVardhanAtreya <arshvardhan></arshvardhan>@yahoo.co.in>
