@@ -11,5 +11,4 @@ There will be three screens in this app:!
 - My Recently Generated Dogs! screen:!
   - Has a scrollable gallery of images that is created from the data held by the cache.!
   - Has a “Clear Dogs!” button that clears out the cache, and the gallery.!
-
-NOTE: the RGB values for the given buttons are R:66, G:134, B:244.
+  - The RGB values for the given buttons are R:66, G:134, B:244.
