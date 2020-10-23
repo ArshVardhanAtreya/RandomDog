@@ -8,14 +8,14 @@
 
         <variable
             name="viewModel"
-            type="com.frankly.randomdog.ui.doggenerator.DogGeneratorViewModel" />
+            type="com.frankly.randomdog.ui.doggenerator.viewmodel.DogGeneratorViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/doggenerator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.doggenerator.DogGeneratorFragment">
+        tools:context=".ui.doggenerator.view.DogGeneratorFragment">
 
         <ImageView
             android:id="@+id/new_dog_imv"

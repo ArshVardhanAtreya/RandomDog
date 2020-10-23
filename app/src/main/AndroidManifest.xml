@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
         <activity
-            android:name=".RecentlyGeneratedDogActivity"
+            android:name=".ui.recentlygenerateddog.view.RecentlyGeneratedDogActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".DogGeneratorActivity"
+            android:name=".ui.doggenerator.view.DogGeneratorActivity"
             android:configChanges="orientation"
             android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity">
